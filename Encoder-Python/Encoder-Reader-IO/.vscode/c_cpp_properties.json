@@ -1,0 +1,66 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/include",
+                "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/src",
+                "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/LiquidCrystal",
+                "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/LiquidCrystal_I2C",
+                "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/Encoder",
+                "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/Encoder/utility",
+                "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/ezButton/src",
+                "/Users/atlas/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "/Users/atlas/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/include",
+                    "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/src",
+                    "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/LiquidCrystal",
+                    "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/LiquidCrystal_I2C",
+                    "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/Encoder",
+                    "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/Encoder/utility",
+                    "/Users/atlas/Desktop/EIC-Game-Code/Encoder-Python/Encoder-Reader-IO/.pio/libdeps/nanoatmega328/ezButton/src",
+                    "/Users/atlas/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "/Users/atlas/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                    "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "/Users/atlas/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60002",
+                "ARDUINO_AVR_NANO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "/Users/atlas/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}

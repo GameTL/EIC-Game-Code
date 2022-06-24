@@ -1,0 +1,88 @@
+#include <Arduino.h>
+// code for dc motor with encoder
+// this pin for arduino mega
+
+// platform.io require this
+#include <Arduino.h>
+#include <Encoder.h>
+#include LiquidCrystal_I2C.h
+
+#include Wire.h
+
+
+//   avoid using pins with LEDs attached
+int x;
+float velocity;
+float angularVelocity;
+int prevT;
+int currT;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Constant
+float RESOLUTION = 2000;
+float PULSE_PER_REV = RESOLUTION * 4;
+float TIME_INTERVAL = 50; // in millisecond
+float DIVIDER = (TIME_INTERVAL / 1000);
+
+void setup()
+{
+    Serial.begin(115200);
+    prevT = millis();
+    currT = millis();
+    // initialize lcd screen
+    lcd.init();
+    // turn on the backlight
+    lcd.backlight();
+}
+// Res: 2000/rotation
+// pulse: 8000
+long oldPosition = 0;
+
+void loop()
+{
+    currT = millis();
+    long newPosition = myEnc.read();
+
+    /* if (newPosition != oldPosition)
+    {
+        angularVelocity = (newPosition - oldPosition);
+
+        Serial.print("Current Position:");
+        Serial.println(newPosition);
+        Serial.print("angularVelocity:");
+        Serial.print(angularVelocity);
+        Serial.println(" rad");
+        Serial.println("");
+    }; */
+    if (currT - prevT > TIME_INTERVAL)
+    {
+        angularVelocity = (float)(((newPosition - oldPosition) * (2)) / (DIVIDER * PULSE_PER_REV));
+        oldPosition = newPosition;
+
+        Serial.print(angularVelocity);
+        prevT = currT;
+    }
+    // wait for a second
+    delay(1000);
+    // tell the screen to write on the top row
+    lcd.setCursor(0, 0);
+    // tell the screen to write “hello, from” on the top row
+    lcd.print(“Hello, From”);
+    // tell the screen to write on the bottom row
+    lcd.setCursor(0, 1);
+    // tell the screen to write “Arduino_uno_guy” on the bottom row
+    // you can change whats in the quotes to be what you want it to be!
+    lcd.print(“Arduino_uno_guy”);
+}
+
+// initialize the liquid crystal library
+// the first parameter is the I2C address
+// the second parameter is how many rows are on your screen
+// the third parameter is how many columns are on your screen
+
+void setup()
+{
+}
+void loop()
+{
+}
