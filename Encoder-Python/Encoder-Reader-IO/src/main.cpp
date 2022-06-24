@@ -44,22 +44,18 @@ void checkOutToDisplay()
         // read the incoming byte:
         lcd.clear();
         input = Serial.readStringUntil('\n');
-        // Serial.print("Output:");
-        // Serial.println(input);
         lcd.setCursor(0, 0);
         lcd.print(input);
     }
 }
 void serialInputToDisplay()
 {
-    if (Serial.available() > 0)
+    if (Serial.available() > 0) // if there's an input
     {
         // read the incoming byte:
         Serial.println(deltaTime);
         lcd.clear();
         input = Serial.readStringUntil('\n');
-        // Serial.print("Output:");
-        // Serial.println(input);
         lcd.setCursor(0, 0);
         lcd.print(input);
     }
@@ -70,11 +66,6 @@ void setup()
     prevT = millis();
     currT = millis();
     displayInit();
-    /* lcd.clear();
-    lcd.begin(16, 2);
-    lcd.print("DISPLAY");
-    lcd.setCursor(0, 1);
-    lcd.print("IT WORKS!"); */
 }
 int counter = 0;
 void loop()
@@ -87,28 +78,13 @@ void loop()
     {
         serialInputToDisplay();
         counter = counter + 1;
-        // lcd.clear();
-        // lcd.setCursor(0, 0);
-        // Serial.println(counter);
-        // lcd.print(counter);
         angularVelocity = (float)(((newPosition - oldPosition) * (2)) / (DIVIDER * PULSE_PER_REV));
         oldPosition = newPosition;
-        Serial.println(counter);
-        if (deltaTime != 20.00)
-        {
-            Serial.println("------------------------");
-                }
-        else
-        {
-            Serial.println(deltaTime);
-        }
-        Serial.println(angularVelocity);
+        Serial.println(counter);       // How many loops
+        Serial.println(deltaTime);     // Check time interval
+        Serial.print(angularVelocity); // Check angular velocity in pi rad/s
+        Serial.print("PI RAD/s");
         Serial.println();
-        // Serial.println();
-        // lcd.setCursor(0, 1);
-        // lcd.print(angularVelocity);
-        // lcd.setCursor(5, 1);
-        // lcd.print("PI RAD/s");
         prevT = currT;
     }
 
